@@ -38,6 +38,20 @@ This scaffold includes:
 - `src/renderer/credential-store.ts`: mock adapter + indicator calculations
 - `src/common/types.ts`: shared models
 
+## Installation
+
+Download the pre-built extension from the [latest release](https://github.com/bladepina/freelens-credential-explorer/releases):
+
+```sh
+# Download the tarball
+wget https://github.com/bladepina/freelens-credential-explorer/raw/main/freelens-credential-explorer-0.1.0.tgz
+
+# Or use curl
+curl -L -O https://github.com/bladepina/freelens-credential-explorer/raw/main/freelens-credential-explorer-0.1.0.tgz
+```
+
+Load it in Freelens from the Extensions menu.
+
 ## Local Build
 
 Prerequisites:
