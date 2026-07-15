@@ -26,6 +26,10 @@ This scaffold includes:
 - Normalized severity (`none`, `info`, `warning`, `critical`) with badges
 - Mock dataset for developing UI and logic without cluster dependency
 
+## Screenshot
+
+![Credential Explorer UI](docs/credential-explorer.png)
+
 ## Project Structure
 
 - `src/main/index.ts`: main extension entrypoint
