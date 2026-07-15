@@ -611,7 +611,7 @@ export function CredentialExplorerPage(): JSX.Element {
         </label>
 
         <label style={styles.control}>
-          <span style={styles.label}>Origine</span>
+          <span style={styles.label}>Origin</span>
           <select style={styles.input} value={originFilter} onChange={(event) => setOriginFilter(event.target.value)}>
             <option value="all">All</option>
             <option value="vault">Vault</option>
@@ -643,7 +643,7 @@ export function CredentialExplorerPage(): JSX.Element {
           <span style={styles.label}>Sort by</span>
           <select style={styles.input} value={sortKey} onChange={(event) => setSortKey(event.target.value as SortKey)}>
             <option value="severity">Severity</option>
-            <option value="expiry">Scadenza</option>
+            <option value="expiry">Expiry</option>
             <option value="age">Age</option>
             <option value="namespace">Namespace</option>
             <option value="secret">Secret</option>
@@ -666,11 +666,11 @@ export function CredentialExplorerPage(): JSX.Element {
               <tr>
                 <th style={styles.headerCell}>Secret</th>
                 <th style={styles.headerCell}>Age</th>
-                <th style={styles.headerCell}>Scadenza</th>
+                <th style={styles.headerCell}>Expiry</th>
                 <th style={styles.headerCell}>Namespace</th>
-                <th style={styles.headerCell}>Origine</th>
+                <th style={styles.headerCell}>Origin</th>
                 <th style={styles.headerCell}>Severity</th>
-                <th style={styles.headerCell}>Relazione</th>
+                <th style={styles.headerCell}>Relationship</th>
                 <th style={styles.headerCell}>Warning</th>
               </tr>
             </thead>
@@ -678,7 +678,7 @@ export function CredentialExplorerPage(): JSX.Element {
               {filteredRows.length === 0 ? (
                 <tr>
                   <td style={styles.cell} colSpan={8}>
-                    Nessun risultato per i filtri selezionati.
+                    No results for the selected filters.
                   </td>
                 </tr>
               ) : null}
