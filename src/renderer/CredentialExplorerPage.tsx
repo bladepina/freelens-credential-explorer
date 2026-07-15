@@ -519,14 +519,14 @@ export function CredentialExplorerPage(): JSX.Element {
         </button>
       </div>
       <p style={styles.subtitle}>
-        Vista rapida: Secret {"->"} Deployment {"->"} Pods {"->"} ServiceAccount
+        Quick view: Secret {"->"} Deployment {"->"} Pods {"->"} ServiceAccount
       </p>
       <div style={styles.status}>
         {dataSource === "cluster"
-            ? "Dati reali dal cluster"
+            ? "Real-time cluster data"
             : dataSource === "empty"
-              ? "Nessun Secret caricato dal cluster"
-              : "Errore durante il caricamento API cluster"}
+              ? "No Secrets loaded from cluster"
+              : "Error loading cluster API"}
         {loadError ? ` (${loadError})` : ""}
       </div>
 
