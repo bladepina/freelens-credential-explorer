@@ -25,6 +25,9 @@ This scaffold includes:
 - Sorting by severity, expiry, age, namespace, and secret
 - Normalized severity (`none`, `info`, `warning`, `critical`) with badges
 - Mock dataset for developing UI and logic without cluster dependency
+- **TLS/SSL Certificate Support**: Automatic detection of `cert-manager` managed certificates with expiry tracking
+  - Certificate expiry detection
+  - Support for Kubernetes native TLS Secrets (`kubernetes.io/tls` type)
 
 ## Screenshot
 
