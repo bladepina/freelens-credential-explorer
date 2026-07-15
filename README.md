@@ -50,25 +50,3 @@ pnpm pack
 ```
 
 The generated tarball can be loaded in Freelens from Extensions.
-
-## Recommended Next Steps
-
-1. Replace mocks with real Kubernetes watchers:
-   - Secrets
-   - Pods
-   - Deployments / ReplicaSets
-   - ServiceAccounts
-2. Add origin detection:
-   - `external-secrets.io/*` annotations
-   - Vault injector label/annotation
-   - fallback `manual`
-3. Implement policy-driven warnings:
-   - expired
-   - expiry within X days
-   - unreferenced secret
-   - service account without automount or inconsistent token projection
-4. Filters and sorting:
-   - by namespace
-   - by origin
-   - by warning severity
-5. Drill-down detail view for Secret with rotation timeline.
