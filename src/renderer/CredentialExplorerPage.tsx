@@ -320,7 +320,7 @@ function formatOrigin(value: string): string {
     return "Kubernetes";
   }
 
-  return "Manuale";
+  return "Manual";
 }
 
 function formatExpiry(daysToExpiry?: number): string {
@@ -618,7 +618,7 @@ export function CredentialExplorerPage(): JSX.Element {
             <option value="external-secrets">External Secrets</option>
             <option value="argocd">ArgoCD</option>
             <option value="cert-manager">cert-manager</option>
-            <option value="manual">Manuale</option>
+            <option value="manual">Manual</option>
             <option value="helm">Helm</option>
             <option value="kubernetes">Kubernetes</option>
           </select>
