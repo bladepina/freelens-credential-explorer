@@ -1,0 +1,42 @@
+{
+  "name": "freelens-credential-explorer",
+  "version": "0.1.0",
+  "description": "Freelens extension to explore Secret credential health and ownership links",
+  "license": "MIT",
+  "author": {
+    "name": "Credential Explorer Contributors"
+  },
+  "main": "out/main/index.js",
+  "renderer": "out/renderer/index.js",
+  "files": [
+    "out/**/*"
+  ],
+  "engines": {
+    "node": ">=24.15.0",
+    "freelens": "^1.9.0"
+  },
+  "scripts": {
+    "type:check": "tsc --noEmit -p tsconfig.json --composite false",
+    "build": "electron-vite build",
+    "build:production": "VITE_PRESERVE_MODULES=false electron-vite build",
+    "clean": "rm -rf out dist"
+  },
+  "dependencies": {
+    "@ogre-tools/injectable": "^17.11.1",
+    "mobx": "^6.13.7",
+    "mobx-react": "^9.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@freelensapp/extensions": "^1.9.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^17.0.87",
+    "@vitejs/plugin-react": "^4.5.0",
+    "electron-vite": "^3.1.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-external": "^6.2.2"
+  }
+}
