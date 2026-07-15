@@ -848,7 +848,7 @@ export function CredentialExplorerPage(): JSX.Element {
               </div>
             </>
           ) : (
-            <div style={styles.emptyDetail}>Seleziona un Secret dalla tabella per vedere dettagli, evidence e metadati.</div>
+            <div style={styles.emptyDetail}>Select a Secret from the table to view details, evidence, and metadata.</div>
           )}
         </aside>
       </div>
