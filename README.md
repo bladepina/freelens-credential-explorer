@@ -1,47 +1,47 @@
 # Freelens Credential Explorer Extension
 
-Estensione Freelens (PoC) per visualizzare rapidamente lo stato delle credenziali Kubernetes con la relazione:
+A Freelens extension (PoC) to quickly visualize the status of Kubernetes credentials with the relationship:
 
-Secret -> Deployment -> Pods -> ServiceAccount
+Secret → Deployment → Pods → ServiceAccount
 
-## Obiettivo
+## Overview
 
-Fornire una dashboard operativa per rispondere in pochi secondi a queste domande:
+Provide an operational dashboard to answer these questions in seconds:
 
-- Quanto e vecchio un Secret?
-- Quando scade?
-- In quale namespace vive?
-- Da dove proviene (Vault, External Secrets, manuale)?
-- Ci sono warning critici?
+- How old is a Secret?
+- When does it expire?
+- In which namespace does it live?
+- Where does it come from (Vault, External Secrets, manual)?
+- Are there critical warnings?
 
-## Stato attuale
+## Current Status
 
-Questo scaffold include:
+This scaffold includes:
 
-- struttura extension Freelens (`main` + `renderer`)
-- pagina `Credential Explorer` nel menu cluster
-- tabella iniziale con colonne: Secret, age, scadenza, namespace, origine, relazione, warning
-- filtri su namespace, origine e severity
-- ordinamento su severity, scadenza, age, namespace e secret
-- severity normalizzata (`none`, `info`, `warning`, `critical`) con badge
-- dataset mock per sviluppare UI e logica senza dipendenza dal cluster
+- Freelens extension structure (`main` + `renderer`)
+- `Credential Explorer` page in the cluster menu
+- Initial table with columns: Secret, age, expiry, namespace, origin, relationship, warning
+- Filters by namespace, origin, and severity
+- Sorting by severity, expiry, age, namespace, and secret
+- Normalized severity (`none`, `info`, `warning`, `critical`) with badges
+- Mock dataset for developing UI and logic without cluster dependency
 
-## Struttura progetto
+## Project Structure
 
-- `src/main/index.ts`: entrypoint main extension
-- `src/renderer/index.tsx`: registrazione pagina e menu
-- `src/renderer/CredentialExplorerPage.tsx`: UI iniziale
-- `src/renderer/credential-store.ts`: adapter mock + calcolo indicatori
-- `src/common/types.ts`: modelli condivisi
+- `src/main/index.ts`: main extension entrypoint
+- `src/renderer/index.tsx`: page registration and menu
+- `src/renderer/CredentialExplorerPage.tsx`: initial UI
+- `src/renderer/credential-store.ts`: mock adapter + indicator calculations
+- `src/common/types.ts`: shared models
 
-## Build locale
+## Local Build
 
-Prerequisiti:
+Prerequisites:
 
 - Node.js 24+
 - pnpm
 
-Comandi:
+Commands:
 
 ```sh
 pnpm install
@@ -49,26 +49,26 @@ pnpm build
 pnpm pack
 ```
 
-Il tarball generato puo essere caricato in Freelens da Extensions.
+The generated tarball can be loaded in Freelens from Extensions.
 
-## Prossimi step consigliati
+## Recommended Next Steps
 
-1. Sostituire i mock con watcher Kubernetes reali:
+1. Replace mocks with real Kubernetes watchers:
    - Secrets
    - Pods
    - Deployments / ReplicaSets
    - ServiceAccounts
-2. Aggiungere rilevamento origine:
+2. Add origin detection:
    - `external-secrets.io/*` annotations
-   - label/annotation Vault injector
+   - Vault injector label/annotation
    - fallback `manual`
-3. Implementare warning policy-driven:
+3. Implement policy-driven warnings:
    - expired
-   - expiry entro X giorni
-   - secret non referenziato
-   - service account senza automount o token projection incoerente
-4. Filtri e ordinamento:
-   - per namespace
-   - per origine
-   - per severita warning
-5. Drill-down dettaglio Secret con timeline rotazione.
+   - expiry within X days
+   - unreferenced secret
+   - service account without automount or inconsistent token projection
+4. Filters and sorting:
+   - by namespace
+   - by origin
+   - by warning severity
+5. Drill-down detail view for Secret with rotation timeline.
